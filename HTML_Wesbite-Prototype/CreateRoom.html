@@ -1,0 +1,74 @@
+<html>
+    <head>
+        <title>Room Booking System</title>
+        <link rel="stylesheet" href="ModifyBookingPage.css">
+        
+    </head>
+    <body>
+        <div class = "hero">
+            <header>
+                <div class ="content flex_space">
+                    <div class ="logo">
+                        <img src = "uowlogo.png" alt="uow logo" width ="200" height="70">
+                    </div>
+                    <div class = "navlinks">
+                        <ul id = "memulist">
+                            <li><a href ="CreateRoom.html">Create Room</a></li>
+                            <li><a href ="StaffLogin.html">View All Rooms</a></li>
+                            <li><i class ="fa fa-search"></i></li>
+                            <li><button class ="primary-btn" onclick ="window.location.href = 'LoginPage.html';">LOG OUT</li>
+                        </ul>
+                        <span class = "fa fa-bars" onclick="menutoggle()"></span>
+                    </div>
+                </div>
+            </header>
+        <section>
+            <div class = "middle">
+                <label for ="rbs">Booking Date: </label>
+                <input type ="date" id="rbs" name="rbs">
+                <br>
+                <br>
+                <label for ="appt">Select a time: </label>
+                <input type ="time" id="appt" name="appt">
+                <br>
+                <br>
+                <label for ="room">Room Number: </label>
+                <select name="roomno" id="roomno">
+                    <option value ="1st">Room 1</option>
+                    <option value ="2nd">Room 2</option>
+                    <option value ="3rd">Room 3</option>
+                </select>
+                <br>
+                <br>
+                <label for ="people">Max Number of People: </label>
+                <input type="text" size ="3">
+                <br>
+                <br>
+                <label for ="Price">Price: </label>
+                <input type="text" size ="10">
+                <br>
+                <br>
+                <label for ="Promo">Promo Code: </label>
+                <input type="text" size ="10">
+                <br>
+                <br>
+                <button class="btn" onclick="window.location.href ='StaffLogin.html';">BACK</button>
+                <button class="btn" onclick="myfunc()">BOOK</button>
+                
+
+            </div>
+            
+            
+            <script>
+                function myfunc()
+                {
+                    alert("Booking Successfully created");
+                }
+            </script>
+        </section>
+            
+    </div>
+    
+    </body>
+
+</html>

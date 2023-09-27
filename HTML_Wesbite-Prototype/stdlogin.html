@@ -1,0 +1,176 @@
+<html>
+    <head>
+        <title>Room Booking System</title>
+        <link rel="stylesheet" href="stdlogin.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css" integrity="sha512-UTNP5BXLIptsaj5WdKFrkFov94lDx+eBvbKyoe1YAfjeRPC+gT5kyZ10kOHCfNZqEui1sxmqvodNUx3KbuYI/A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+
+    </head>
+    <body>
+        <header>
+            <div class ="content flex_space">
+                <div class ="logo">
+                    <img src = "uowlogo.png" alt="uow logo" width ="200" height="70">
+                </div>
+                <div class = "navlinks">
+                    <ul id = "memulist">
+                        <li><a href ="stdlogin.html">home</a></li>
+                        <li><a href ="viewrooms.html">rooms</a></li>
+                        <li><a href ="#pages">pages</a></li>
+                        <li><a href ="#about">about</a></li>
+                        <li><a href ="#contact">contact</a></li>
+                        <li><i class ="fa fa-search"></i></li>
+                        <li><button class ="primary-btn">BOOK NOW</li>
+                    </ul>
+                    <span class = "fa fa-bars" onclick="menutoggle()"></span>
+                </div>
+            </div>
+        </header>
+        <script>
+            var menulist = document.getElementById('menulist');
+            menulist.style.maxHeight = "0px";
+
+            function menutoggle(){
+                if  (menulist.style.maxHeight == "0px" )
+                {
+                    menulist.style.maxHeight = "100vh";
+                }
+                else{
+                    menulist.style.maxHeight = "0px";
+                }
+            }
+        </script>
+        <section class = "home">
+            <div class = "content">
+                <div class="owl-carousel owl-theme">
+                   <div class ="item">
+                    <img src ="room1.png" alt ="room1">
+                    <div class ="text">
+                        <h1>Book Your Room</h1>
+                        <p>10 Seater room fully air-conditioned</p>
+                        <div class = "flex">
+                            <button class = "primary-btn">READ MORE</button>
+                            <button class = "secondary-btn">CONTACT US</button>
+                        </div>
+                    </div>
+                   </div>
+                   <div class ="item">
+                    <img src ="room2.png" alt ="room2">
+                    <div class ="text">
+                        <h1>Book Your Room</h1>
+                        <p>10 Seater room fully air-conditioned</p>
+                        <div class = "flex">
+                            <button class = "primary-btn">READ MORE</button>
+                            <button class = "secondary-btn">CONTACT US</button>
+                        </div>
+                    </div>
+                   </div>
+                   <div class ="item">
+                    <img src ="room3.png" alt ="room3">
+                    <div class ="text">
+                        <h1>Book Your Room</h1>
+                        <p>10 Seater room fully air-conditioned</p>
+                        <div class = "flex">
+                            <button class = "primary-btn">READ MORE</button>
+                            <button class = "secondary-btn">CONTACT US</button>
+                        </div>
+                    </div>
+                   </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js" integrity="sha512-gY25nC63ddE0LcLPhxUJGFxa2GoIyA5FLym4UJqHDEMHjp8RET6Zn/SHo1sltt3WuVtqfyxECP38/daUc/WVEA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script>
+            $('.owl-carousel').owlCarousel({
+            loop: true,
+            margin: 0,
+            nav: true,
+            dots: false,
+            navigationText: ["<i class = 'fa fa-chevron-left'></i>", "<i class = 'fa fa-chevron-right'></i>"],
+            responsive:{
+                0:{
+                    items:1
+                },
+                768:{
+                    items:1
+                },
+                1000:{
+                    items:1
+                }
+            }
+            })
+        </script>
+
+
+
+        <section class ="book">
+            <div class ="container flex_space">
+                <div class="text">
+                    <h1><span>Book </span> Your Rooms </h1>
+                </div>
+                <div class = "form" onsubmit="return roombooking()">
+                    <form>
+                        <label for="date-chosen">Choose a Date:</label>
+                        <select name ="date-chosen" id ="date-chosen">
+                            <option value ="nil"></option>
+                            <option value ="1st">11 April 2023</option>
+                            <option value ="2nd">12 April 2023</option>
+                            <option value ="3rd">13 April 2023</option>
+                        </select>
+                        <label for="Time-chosen">Choose a Time:</label>
+                        <select name ="Time-chosen" id ="Time-chosen">
+                            <option value ="nil"></option>
+                            <option value ="1st">8:30AM - 10:30AM</option>
+                            <option value ="2nd">11:30AM - 1:30PM</option>
+                            <option value ="3rd">2:30AM - 4:30PM</option>
+                        </select>
+                        <label for="Room-chosen">Choose a Room:</label>
+                        <select name ="Room-chosen" id ="Room-chosen">
+                            <option value ="nil"></option>
+                            <option value ="1st">Room 1 ($10)</option>
+                            <option value ="2nd">Room 2 ($20)</option>
+                            <option value ="3rd">Room 3 ($30)</option>
+                        </select>
+                        <br><br>
+                        CardHolder name:
+                        <input id = "cardname" type ="text" class ="input-field" size ="20">
+                        Card Number:
+                        <input id = "cardnumber" type ="text" class ="input-field">
+                        <br>
+                        Expiry:
+                        <input id = "exp" type ="text" class ="input-field" size ="10">
+                        
+                        CVC:
+                        <input id = "cvc" type ="text" class ="input-field" size ="4">
+                        <br>
+                        Promo Code
+                        <input id = "promoco" type ="text" class ="input-field">
+                        <br>
+                        <br>
+                        <button type ="submit" class ="submit-btn">Book</button>
+                        
+                    </form>
+                </div>
+
+            </div>
+
+        </section>
+        <script>
+            function roombooking()
+            {
+                var accept;
+                accept = true;
+                if(accept == true)
+                {
+                    alert("You have booked your room!");
+                }
+                return accept;
+            }
+        </script>
+    </body>
+</html>

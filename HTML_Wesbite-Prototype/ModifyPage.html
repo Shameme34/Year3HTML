@@ -1,0 +1,148 @@
+<html>
+    <head>
+        <title>Room Booking System</title>
+        <link rel="stylesheet" href="Modify.css">
+        
+    </head>
+    <body>
+        <div class = "hero">
+            <header>
+                <div class ="content flex_space">
+                    <div class ="logo">
+                        <img src = "uowlogo.png" alt="uow logo" width ="200" height="70">
+                    </div>
+                    <div class = "navlinks">
+                        <ul id = "memulist">
+                            <li><a href ="stdlogin.html">home</a></li>
+                            <li><a href ="viewrooms.html">rooms</a></li>
+                            <li><a href ="#pages">pages</a></li>
+                            <li><a href ="#about">about</a></li>
+                            <li><a href ="#contact">contact</a></li>
+                            <li><i class ="fa fa-search"></i></li>
+                            <li><button class ="primary-btn" onclick ="window.location.href = 'LoginPage.html';">LOG OUT</li>
+                        </ul>
+                        <span class = "fa fa-bars" onclick="menutoggle()"></span>
+                    </div>
+                </div>
+            </header>
+        <section>
+            <div class = "form" onsubmit="return modifiedconfirm()">
+                <form>
+                    <div class="category_div" id="category_div">Please select date:
+                        <select name="category" class="required-entry" id="category" onchange="javascript: dynamicdropdown(this.options[this.selectedIndex].value);">
+                            <option value="">Select Date</option>
+                            <option value="1st">May 26, Friday</option>
+                            <option value="2nd">May 29, Monday</option>
+                            <option value="3rd">May 30, Tuesday</option>
+                            <option value="4th">May 31, Wednesday</option>
+                        </select>
+                    </div>
+                    <br>
+                    <div class="sub_category_div" id="sub_category_div">Please select room:
+                        <script type="text/javascript" language="JavaScript">
+                            document.write('<select name="subcategory" id="subcategory" onchange="javascript: dynamicdropdownone(this.options[this.selectedIndex].value);"><option value="">Please select date</option></select>')
+                        </script>
+                        <noscript>
+                            <select name="subcategory" id="subcategory" >
+                                <option value="">Please select date </option>
+                            </select>
+                        </noscript>
+                    </div>
+                    <br>
+                    <div class="sub_subcategory_div" id="sub_subcategory_div">Please select timeslot:
+                        <script type="text/javascript" language="JavaScript">
+                            document.write('<select name="sub_subcategory" onchange="javascript: urlRedirectTo(this.options[this.selectedIndex].value);" id="sub_subcategory"><option value="">Please select room</option></select>')
+                        </script>
+                        <noscript>
+                            <select name="sub_subcategory" id="sub_subcategory" >
+                                <option value="">Please select room</option>
+                            </select>
+                        </noscript>
+                    </div>
+                    <br>
+                    <button type ="submit" class ="submit-btn" onclick ="myFunc()">Book</button>
+                    <button type ="button" class ="submit-btn" onclick ='window.location.href="viewrooms.html"'>Back</button>
+                    <script>
+                        function myFunc()
+                        {
+                            alert("Your booking have been changed!");
+                        }
+
+                    
+                    </script>
+                    
+                </form>
+            </div>
+            <script language="javascript" type="text/javascript">
+                function dynamicdropdown(listindex)
+                {
+                    document.getElementById("sub_subcategory").length = 0;
+                    document.getElementById("sub_subcategory").options[0]=new Option("Please select date","");
+                    document.getElementById("subcategory").length = 0;
+                    switch (listindex)
+                    {
+                        case "1st" :
+                            document.getElementById("subcategory").options[0]=new Option("Please select room","");
+                            document.getElementById("subcategory").options[1]=new Option("Room 1","Room 1");
+                            document.getElementById("subcategory").options[2]=new Option("Room 3","Room 3");
+                            document.getElementById("sub_subcategory").options[0]=new Option("Please select room","");
+                            break;
+                        
+                        case "2nd" :
+                            document.getElementById("subcategory").options[0]=new Option("Please select room","");
+                            document.getElementById("subcategory").options[1]=new Option("Room 2","Room 2");
+                            document.getElementById("subcategory").options[2]=new Option("Room 3","Room 3");
+                            document.getElementById("sub_subcategory").options[0]=new Option("Please select room","");
+                            break;
+                        case "3rd" :
+                            document.getElementById("subcategory").options[0]=new Option("Please select room","");
+                            document.getElementById("subcategory").options[1]=new Option("Room 1","Room 1");
+                            document.getElementById("sub_subcategory").options[0]=new Option("Please select room","");
+                            break;
+                        case "4th" :
+                            document.getElementById("subcategory").options[0]=new Option("Please select room","");
+                            document.getElementById("subcategory").options[1]=new Option("Room 3","Room 3");
+                            document.getElementById("sub_subcategory").options[0]=new Option("Please select room","");
+                            break;
+                        default:
+                            document.getElementById("subcategory").options[0]=new Option("Please select room","");
+                            document.getElementById("sub_subcategory").options[0]=new Option("Please select room","");
+                            break;
+                    }
+                    return true;
+                }
+                
+                function dynamicdropdownone(listindex)
+                {
+                    document.getElementById("sub_subcategory").length = 0;
+                    switch (listindex)
+                    {
+                        case "Room 1" :
+                            document.getElementById("sub_subcategory").options[0]=new Option("Please select timeslot","");
+                            document.getElementById("sub_subcategory").options[1]=new Option("8:30AM - 12:30PM","8:30AM - 12:30PM");
+                            document.getElementById("sub_subcategory").options[2]=new Option("2PM - 4PM","2PM - 4PM");
+                            break;
+                        
+                        case "Room 2" :
+                            document.getElementById("sub_subcategory").options[0]=new Option("Please select timeslot","");
+                            document.getElementById("sub_subcategory").options[1]=new Option("8:30AM - 12:30PM","8:30AM - 12:30PM");
+                            document.getElementById("sub_subcategory").options[2]=new Option("4PM - 6PM","4PM - 6PM");
+                            break;
+                        case "Room 3" :
+                            document.getElementById("sub_subcategory").options[0]=new Option("Please select timeslot","");
+                            document.getElementById("sub_subcategory").options[1]=new Option("2PM - 4PM","2PM - 4PM");
+                            document.getElementById("sub_subcategory").options[2]=new Option("4PM - 6PM","4PM - 6PM");
+                            break;
+                        default:
+                            document.getElementById("sub_subcategory").options[0]=new Option("Please select timeslot","");
+                            break;
+                    }
+                    return true;
+                }
+           </script>
+        </section>
+    </div>
+    
+    </body>
+
+</html>

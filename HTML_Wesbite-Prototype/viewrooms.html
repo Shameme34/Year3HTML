@@ -1,0 +1,76 @@
+<html>
+    <head>
+        <title>Room Booking System</title>
+        <link rel="stylesheet" href="viewrooms.css">
+        
+    </head>
+    <body>
+        <div class = "hero">
+            <header>
+                <div class ="content flex_space">
+                    <div class ="logo">
+                        <img src = "uowlogo.png" alt="uow logo" width ="200" height="70">
+                    </div>
+                    <div class = "navlinks">
+                        <ul id = "memulist">
+                            <li><a href ="#home">home</a></li>
+                            <li><a href ="viewrooms.html">rooms</a></li>
+                            <li><a href ="#pages">pages</a></li>
+                            <li><a href ="#about">about</a></li>
+                            <li><a href ="#contact">contact</a></li>
+                            <li><i class ="fa fa-search"></i></li>
+                            <li><button class ="primary-btn" onclick ="window.location.href = 'LoginPage.html';">LOG OUT</li>
+                        </ul>
+                        <span class = "fa fa-bars" onclick="menutoggle()"></span>
+                    </div>
+                </div>
+            </header>
+        <section>
+            <table id="MyTable" style ="width :80%" class ="center">
+                <tr>
+                    <th>Date of Booking</th>
+                    <th>Room Number</th>
+                    <th>Time slot</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                <tr>
+                    <td>May 22, Monday</td>
+                    <td>Room 1</td>
+                    <td> 8:30AM - 10:30AM</td>
+                    <td><button type ="submit" class ="submit-btn" onclick ="window.location.href = 'ModifyPage.html';">Modify Booking</button></td>
+                    <td><input type ="button" class ="submit-btn" onclick ="deleteRow(this)" value="Delete"></td>
+                </tr>
+                <tr>
+                    <td>May 23, Tuesday</td>
+                    <td>Room 3</td>
+                    <td>2:00PM - 4:00PM</td>
+                    <td><button type ="submit" class ="submit-btn" onclick ="window.location.href = 'ModifyPage.html';">Modify Booking</button></td>
+                    <td><input type ="button" class ="submit-btn" onclick ="deleteRow(this)" value="Delete"></td>
+                </tr>
+                <tr>
+                    <td>May 23, Tuesday</td>
+                    <td>Room 2</td>
+                    <td>10:30AM - 12:30PM</td>
+                    <td><button type ="submit" class ="submit-btn" onclick ="window.location.href = 'ModifyPage.html';">Modify Booking</button></td>
+                    <td><input type ="button" class ="submit-btn" onclick ="deleteRow(this)" value="Delete"></td>
+                </tr>
+                <tr>
+                    <td>May 25, Thusday</td>
+                    <td>Room 2</td>
+                    <td>8:30AM - 10:30AM</td>
+                    <td><button type ="submit" class ="submit-btn" onclick ="window.location.href = 'ModifyPage.html';">Modify Booking</button></td>
+                    <td><input type ="button" class ="submit-btn" onclick ="deleteRow(this)" value="Delete"></td>
+                </tr>
+            </table>
+        </section>
+    </div>
+    <script>
+        function deleteRow(r){
+            var i = r.parentNode.parentNode.rowIndex;
+            document.getElementById("MyTable").deleteRow(i);
+        }
+    </script>
+    </body>
+
+</html>
